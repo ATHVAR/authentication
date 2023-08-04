@@ -1,0 +1,69 @@
+.registration-form{
+	padding: 50px 0;
+}
+
+.registration-form form{
+    background-color: #fff;
+    max-width: 600px;
+    margin: auto;
+    padding: 15px 50px ;
+    border-radius: 30px;
+    border: 3px solid black;
+}
+
+.registration-form .item{
+	border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.registration-form .add-account{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #3aa530;
+    border: none;
+    color: white;
+    margin-top: 20px;
+    width: 150px;
+    box-shadow: 0 9px #999;
+}
+
+.registration-form .add-account:active {
+    background-color: #06f52d;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.registration-form .discard-account{
+    border-radius: 30px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #e62a2a;
+    border: none;
+    color: white;
+    margin-top: 20px;
+    width: 150px;
+    box-shadow: 0 9px #999;
+}
+
+.registration-form .discard-account:active {
+    background-color: #ff0000;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+.success-message{
+    color: green;
+    font-size: 12px;
+}
+
+.headingdiv{
+    border: 1px solid black;
+    border-radius: 30px;
+}

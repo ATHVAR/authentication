@@ -1,0 +1,9 @@
+.icon{
+    width: 40px;
+    height: 40px;
+    margin-inline-start: 45%;
+    margin-top: 5px;
+}
+.card{
+    border-radius: 5px;
+}

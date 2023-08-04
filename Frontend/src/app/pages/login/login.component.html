@@ -1,0 +1,44 @@
+<body>
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <form (ngSubmit)="onSubmit()" #loginForm="ngForm" novalidate>
+    <h3>Login Here</h3>
+
+    <label for="email">Email</label>
+    <input
+      type="email"
+      placeholder="Enter Email"
+      id="username"
+      name="email"
+      required
+      [(ngModel)]="email"
+      #emailInput="ngModel"
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+    <div *ngIf="emailInput.invalid && (emailInput.dirty || emailInput.touched)" class="error">
+      <div *ngIf="emailInput.errors?.['required']">Email is required.</div>
+      <div *ngIf="emailInput.errors?.['pattern']">Invalid email format.</div>
+    </div>
+
+    <label for="password">Password</label>
+    <input
+      type="password"
+      placeholder="Enter Password"
+      id="password"
+      name="password"
+      required
+      minlength="6"
+      maxlength="10"
+      [(ngModel)]="password"
+      #passwordInput="ngModel">
+    <div *ngIf="passwordInput.invalid && (passwordInput.dirty || passwordInput.touched)" class="error">
+      <div *ngIf="passwordInput.errors?.['required']">Password is required.</div>
+      <div *ngIf="passwordInput.errors?.['minlength']">Password must be at least 6 characters long.</div>
+      <div *ngIf="passwordInput.errors?.['maxlength']">Password cannot be more than 10 characters long.</div>
+    </div>
+
+    <button id="submit" type="submit" class="btn btn-success" [disabled]="loginForm.invalid">Log In</button>
+    <button type="button" class="btn btn-danger" >Cancel</button>
+  </form>
+</body>

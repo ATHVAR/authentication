@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="brand-box">
+    <span class="brand">ICTAK</span>
+    <a class="navbar-brand"><img id="logo" src="assets/LOGO_ICTAK-Name.jpg" alt=""></a>
+  </div>
+  
+  <div class="text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary-main">Learner Tracker</span>
+      <span class="heading-primary-sub">ICT Academy of Kerala</span>
+    </h1>
+    <li class="nav-item list-unstyled" *ngIf="!showLoginForm">
+      <button class="button-85" (click)="login()">Login</button>
+    </li>
+  </div>
+</header>
+
+<app-login *ngIf="showLoginForm" (submitted)="onLoginSubmitted()"></app-login>

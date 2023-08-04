@@ -1,0 +1,15 @@
+/* app.component.scss or app.component.css */
+/* app.component.scss or app.component.css */
+.app-container {
+  position: relative;
+}
+
+.black-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); /* Adjust the opacity (last parameter) as needed */
+  pointer-events: none; /* Prevent the overlay from capturing mouse events */
+}

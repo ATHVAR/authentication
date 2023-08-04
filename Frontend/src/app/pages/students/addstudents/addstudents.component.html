@@ -1,0 +1,79 @@
+<!-- Template Driven Form -->
+<div class="registration-form">
+    <form class="form1 bg-light" #addstud="ngForm" (ngSubmit)="submit()">
+        <div class="text-center headingdiv bg-primary-subtle fs-3 font-monospace">
+            <span>Add Student Details</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="email" class="form-control item" id="learnerid" placeholder="Learner ID" name="learnerid" required [(ngModel)]="studdetail.id" #id="ngModel" [class.is-invalid]="id.invalid&&id.touched" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+            <span *ngIf="id.touched &&id.errors?.['required']" class="error-message" >Mail ID is required.</span>
+            <span *ngIf="id.touched &&id.errors?.['pattern']" class="error-message">Enter a Valid Email.</span>
+            <span *ngIf="id.touched &&!id.errors?.['pattern']&&!id.errors?.['required']" class="success-message">Valid</span>
+            <br *ngIf="id.untouched">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="name" placeholder="Name" name="name"  [(ngModel)]="studdetail.name" #name="ngModel" [class.is-invalid]="name.invalid&&name.touched" required pattern="^[A-Za-z ]+$">
+            <span *ngIf="name.touched &&name.errors?.['required']" class="error-message" >Name is required.</span>
+            <span *ngIf="name.touched &&name.errors?.['pattern']" class="error-message">Name must not contain special characters or digits</span>
+            <span *ngIf="name.touched &&!name.errors?.['pattern']&&!name.errors?.['required']" class="success-message">Valid</span>
+            <br *ngIf="name.untouched">
+        </div>
+        <div class="form-group">
+            <select id="course" class="form-select item" name="course" required [(ngModel)]="studdetail.course">
+                <option value="" disabled selected>Course</option>
+                <option>FSD</option>
+                <option>DSA</option>
+                <option>ML-AI</option>
+                <option>RPA</option>
+                <option>ST</option>
+                <option>CSA</option>
+              </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="project" class="form-select item" name="project" required [(ngModel)]="studdetail.project">
+                <option value="" disabled selected>Project</option>
+                <option>ICTAK</option>
+                <option>KKEM</option>
+                <option>NORKA</option>
+                <option>ABCD</option>
+                <option>KDISC</option>
+              </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="batch" class="form-select item" name="batch" required [(ngModel)]="studdetail.batch">
+                <option value="" disabled selected>Batch</option>
+                <option>May 22</option>
+                <option>Jun 22</option>
+                <option>Jul 22</option>
+                <option>Aug 22</option>
+                <option>Dec 22</option>
+                <option>Mar 23</option>
+              </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="status" class="form-select item" name="status" required [(ngModel)]="studdetail.status">
+                <option value="" disabled selected>Status</option>
+                <option>Qualified</option>
+                <option>Incompetent</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="placement" class="form-select item" name="placement" required [(ngModel)]="studdetail.placement">
+                <option value="" disabled selected>Placement</option>
+                <option>Placed</option>
+                <option>Job Seeking</option>
+                <option>Not Interested</option>
+              </select>
+        </div>
+        <br>
+        <div class="form-group d-flex justify-content-evenly">
+            <button type="submit" [disabled]="addstud.invalid" class="btn btn-block add-account"><i class="bi bi-person-fill-add"></i> Add</button>
+            <button routerLink="/viewstuds" class="btn btn-block discard-account"><i class="bi bi-x-circle-fill"></i> Discard</button>
+        </div>
+    </form>
+</div>

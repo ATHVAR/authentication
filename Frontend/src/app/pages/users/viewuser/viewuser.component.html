@@ -1,0 +1,21 @@
+<!-- user details in card form -->
+<div class="container text-center mt-5">
+  <div class="row">
+    <div class="col" *ngFor="let user of users">
+      <div class="card border border-success mb-2 border-opacity-75" style="width: 19rem;">
+        <div class="icon">
+          <img src="assets/person_circle_icon_159926.png" class="card-img-top" alt="icon">
+        </div>
+        <div class="card-body bg-body-tertiary">
+          <h5 class="card-title">{{ user.role }}</h5>
+          <p class="card-text">Name: {{ user.name }}</p>
+          <p class="card-text">Email: {{ user.email }}</p>
+          <div class="button d-flex justify-content-evenly">
+            <a [routerLink]="'/edituser/' + user._id" class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i> Edit</a>
+            <button class="btn btn-outline-danger" (click)="deleteUser(user._id)"><i class="bi bi-trash3-fill"></i> Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

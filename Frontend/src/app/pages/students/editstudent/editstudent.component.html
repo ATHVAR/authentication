@@ -1,0 +1,69 @@
+<!-- Reactive Form -->
+<div class="registration-form">
+    <form class="form1 bg-light" [formGroup]="editform" (ngSubmit)="onsubmit()">
+        <div class="text-center headingdiv bg-primary-subtle fs-3 font-monospace">
+            <span>Edit Student Details</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="email" class="form-control item" id="learnerid" placeholder="Learner ID" formControlName="id">
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="name" placeholder="Name" formControlName="name">
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="course" class="form-select item" formControlName="course">
+                <option>FSD</option>
+                <option>DSA</option>
+                <option>ML-AI</option>
+                <option>RPA</option>
+                <option>ST</option>
+                <option>CSA</option>
+              </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="project" class="form-select item" formControlName="project">
+                <option>ICTAK</option>
+                <option>KKEM</option>
+                <option>NORKA</option>
+                <option>ABCD</option>
+                <option>KDISC</option>
+              </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="batch" class="form-select item" formControlName="batch">
+                <option>May 22</option>
+                <option>Jun 22</option>
+                <option>Jul 22</option>
+                <option>Aug 22</option>
+                <option>Dec 22</option>
+                <option>Mar 23</option>
+              </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="status" class="form-select item" formControlName="status">
+                <option>Qualified</option>
+                <option>Incompetent</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <select id="placement" class="form-select item" formControlName="placement">
+                <option>Placed</option>
+                <option>Job Seeking</option>
+                <option>Not Interested</option>
+              </select>
+        </div>
+        <br>
+        <div class="form-group d-flex justify-content-evenly">
+            <button type="submit" class="btn btn-block update-account"><i class="bi bi-person-fill-up"></i> Update</button>
+            <button routerLink="/viewstuds" class="btn btn-block cancel-account"><i class="bi bi-x-circle-fill"></i> Cancel</button>
+        </div>
+    </form>
+</div>
+

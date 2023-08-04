@@ -1,0 +1,84 @@
+<!-- Side bar -->
+<div class="wrapper">
+    <nav #sidebar id="sidebar" [ngClass]="{'active': isSidebarActive}">
+        <div class="sidebar-header">
+            <h3>ICTAK Learner Tracker</h3>
+        </div>
+        <ul class="list-unstyled components">
+            <!-- add home component *** -->
+            <a class="homelink" (click)="loadHomeComp()"><p><i class="bi bi-house"></i> Home</p></a>
+            <li *ngIf="isAdminRole()">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="bi bi-person-lock"></i> Admin Panel</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a (click)="loadAddUser()"><i class="bi bi-person-plus"></i> Add User</a>
+                    </li>
+                    <li>
+                        <a (click)="loadViewUser()"><i class="bi bi-person-badge"></i> View Users</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="bi bi-people-fill"></i> Student Panel</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a (click)="loadAddStudent()"><i class="bi bi-person-plus"></i> Add Students</a>
+                    </li>
+                    <li>
+                        <a (click)="loadEditStudent()"><i class="bi bi-person-badge"></i> View Students</a>
+                    </li>
+                    <li>
+                        <a (click)="loadCsv()"><i class="bi bi-file-earmark-arrow-up-fill"></i> CSV-upload</a>
+                    </li>
+                </ul>
+            </li>
+            <li *ngIf="isAdminRole()">
+                <a class="nav-link" (click)="loadNotification()"><i class="bi bi-bell"></i> Add Notification</a>
+            </li>
+        </ul>
+        <ul class="list-unstyled CTAs">
+            <li>
+                <button class="button-89" (click)="logout()" role="button"><i class="bi bi-box-arrow-left"></i> Logout</button>
+            </li>
+        </ul>
+    </nav>
+
+    
+    <!-- Page Content  -->
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button (click)="toggleSidebar()" type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                    <span> Menu</span>
+                </button>
+            </div>
+        </nav>
+        <ng-container *ngIf="isAddUserActive">
+            <app-adduser></app-adduser>
+        </ng-container>
+        <ng-container *ngIf="isViewUserActive">
+            <app-view-user></app-view-user>
+        </ng-container>
+        <ng-container *ngIf="isAddStudentActive">
+            <app-addstudents></app-addstudents>
+        </ng-container>
+        <ng-container *ngIf="isEditStudentActive">
+            <app-viewstudents></app-viewstudents>
+        </ng-container>
+        <ng-container *ngIf="isCsvActive">
+            <app-csv></app-csv>
+        </ng-container>
+        <ng-container *ngIf="isHomeActive">
+            <app-homedata></app-homedata>
+        </ng-container>
+        <ng-container *ngIf="isAddNotification">
+            <app-changepass></app-changepass>
+        </ng-container>
+
+
+
+
+
+    </div>
+</div>

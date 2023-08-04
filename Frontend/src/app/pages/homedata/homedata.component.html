@@ -1,0 +1,36 @@
+<div class="row d-flex justify-content-evenly">
+    <div class="col">
+        <div class="card" style="width: 18rem; height: 25rem;">
+            <img class="card-img-top" src="assets/banner4.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">ICTAK Paatshala</h5>
+            <p class="card-text">ICT Academy of Kerala is a Social Enterprise created in a Public Private Partnership model (PPP) for imparting ICT skills to the youths of Kerala.</p>
+            <a href="https://retail.ictkerala.org/" class="btn btn-primary">Go To Paatshala</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 18rem; height: 25rem;">
+            <img class="card-img-top" src="assets/download - Copy.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">Digital Workforce Management System</h5>
+            <p class="card-text">A Kerala Development and Innovation Strategic Council (K-DISC) initiative, Kerala Knowledge Economy Mission (KKEM)</p>
+            <a href="https://knowledgemission.kerala.gov.in/" class="btn btn-primary">Go To DWMS</a>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="width: 18rem; height: 25rem;">
+            <marquee direction="up" height="500" onMouseOver="this.stop()" onMouseOut="this.start()">
+                <li class="list-unstyled text-center">Notifications</li>
+                <br>
+                <ul *ngFor="let item of notification">
+                    <li>
+                        {{item.notificationmess}}
+                    </li>
+                </ul>
+            </marquee>
+        </div>
+    </div>
+</div>
+

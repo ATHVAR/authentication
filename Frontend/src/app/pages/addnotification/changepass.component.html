@@ -1,0 +1,10 @@
+<form #addmess="ngForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="notification">Input Notification</label>
+    <input type="text" class="form-control" id="notification" placeholder="Message..." name="notificationmess" [(ngModel)]="notification.notificationmess" #notificationmess="ngModel">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+<app-viewmessage></app-viewmessage>

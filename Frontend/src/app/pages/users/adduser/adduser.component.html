@@ -1,0 +1,41 @@
+<div class="registration-form">
+    <form class="bg-light" #adduser="ngForm" (submit)="addUser()">
+        <div class="form-icon">
+            <span><i class="bi bi-person-fill-add"></i></span>
+        </div>
+        <div class="text-center headingdiv bg-primary-subtle fs-3 font-monospace">
+            <span>Add Officer Details</span>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="username" name="username" placeholder="Name" [(ngModel)]="user.name" #name="ngModel" [class.is-invalid]="name.invalid&&name.touched" required pattern="^[A-Za-z ]+$">
+            <span *ngIf="name.touched &&name.errors?.['required']" class="error-message" >Name is required.</span>
+            <span *ngIf="name.touched &&name.errors?.['pattern']" class="error-message">Name must not contain special characters or digits</span>
+            <span *ngIf="name.touched &&!name.errors?.['pattern']&&!name.errors?.['required']" class="success-message">Valid</span>
+            <br *ngIf="name.untouched">
+        </div>
+        <div class="form-group">
+            <select id="disabledSelect" class="form-select item" name="role" [(ngModel)]="user.role">
+                <option value="" disabled selected>Role</option>
+                <option>Admin</option>
+                <option>Training Head</option>
+                <option>Placement Officer</option>
+            </select>
+        </div>
+        <br>
+        <div class="form-group">
+            <input type="email" class="form-control item" id="email" name="email" placeholder="Email" [(ngModel)]="user.email" #id="ngModel" [class.is-invalid]="id.invalid&&id.touched" required pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+            <span *ngIf="id.touched &&id.errors?.['required']" class="error-message" >Mail ID is required.</span>
+            <span *ngIf="id.touched &&id.errors?.['pattern']" class="error-message">Enter a Valid Email.</span>
+            <span *ngIf="id.touched &&!id.errors?.['pattern']&&!id.errors?.['required']" class="success-message">Valid</span>
+            <br *ngIf="id.untouched">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control item" id="phone-number" name="password" placeholder="Password" [(ngModel)]="user.password">
+        </div>
+        <div class="form-group d-flex justify-content-evenly">
+            <button type="submit" [disabled]="adduser.invalid" class="btn btn-block add-account"><i class="bi bi-person-fill-add"></i> Add</button>
+            <button type="button" (click)="clearForm()" class="btn btn-block discard-account"><i class="bi bi-x-circle-fill"></i> Discard</button>
+        </div>
+    </form>
+</div>

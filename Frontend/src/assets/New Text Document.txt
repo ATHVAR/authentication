@@ -1,0 +1,14 @@
+.btn-primary {
+  background-color: rgb(16, 4, 243); /* White background */
+  color: #ffffff; /* Blue tint for text */
+  border: 1px solid #007bff; /* Blue tint for the border */
+  margin-left: -40px;
+  width: 140px;
+  height: 50px;
+  
+}
+
+.btn-primary:hover {
+  background-color: #007bff; /* Blue tint on hover */
+  color: white; /* Text color on hover */
+}
